@@ -60,7 +60,7 @@ public class CsConnection {
 	private static void send(String path) throws FileNotFoundException,
 			IOException {
 		File file = new File(path.trim());
-		FilePro fp = new FilePro(file.getName(), Md5Utils.encoding(file));
+		FilePro fp = new FilePro(file.getName(), Md5Utils.encoding(file),file.length());
 		fis = new FileInputStream(file);
 		OutputStream out = s.getOutputStream();
 		oos = new ObjectOutputStream(out);
